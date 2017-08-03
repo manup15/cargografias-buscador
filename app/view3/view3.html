@@ -1,0 +1,13 @@
+<div class="main" ng-app="myApp" ng-controller="View3Ctrl">
+    <h1>CARGOGRAFÍAS</h1>
+    <h3>Organizaciones - org_id</h3>
+    <input class="form-control field span12" rows="4" ng-model="keywords3" ng-change="search3()" placeholder="org_id"/>
+    <h4>{{urlhttp}}</h4>
+    <li ng-repeat="res in response3">
+        <p ng-show="loading">Loading...</p>
+        <h3 ng-hide="loading">{{res.person}}</h3>
+        <p ng-hide="loading"> Datos disponibles: <br>{{res}}</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+    </li>
+</div>

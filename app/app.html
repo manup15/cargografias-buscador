@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CARGOGRAFÍAS - SEARCH</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/flexboxgrid/dist/flexboxgrid.min.css" type="text/css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="view1/view1.css">
+    <link rel="stylesheet" href="view2/view2.css">
+    <link rel="stylesheet" href="view6/view6.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app='myApp' ng-controller="mainCtrl">
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="row">
+      <div class="col-xs-12
+              col-sm-12
+              col-md-12
+              col-lg-12">
+          <div class="view2-header">
+              <a href="index.html"><img src="../images/logo.png" alt=""></a>
+              <div class="row search-bar" ng-cloak ng-controller="mainCtrl as ctrl">
+
+                  <md-autocomplete id="autocomplete" md-autoselect=true placeholder="Que persona estas buscando?" md-item-text="item.display" md-items="item in ctrl.items" md-menu-class="autocomplete-custom-template" md-min-length="2" md-delay="ctrl.throttle" md-search-text="ctrl.searchText"
+                      md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-select-on-match=true md-match-case-insensitive=true md-selected-item-change="ctrl.selectedItemChange(item)" md-selected-item="ctrl.selectedItem">
+                      <md-item-template>
+                          <span class="item-title">
+                            <span md-highlight-flags="^i" md-highlight-text="ctrl.searchText" ng-click='go(item.nombre)'>
+                              {{item.nombre}}
+                            </span>
+                          </span>
+                      </md-item-template>
+                      <md-not-found>
+                          No se encuentran resultados.
+                      </md-not-found>
+                  </md-autocomplete>
+              </div>
+              <img src="../images/filter-icon.png" alt="">
+              <p>Filtros Avanzados</p>
+              <img src="../images/share-icon.png" alt="">
+              <p>Compartir</p>
+              <img id="burger" src="../images/burger.png" alt="">
+          </div>
+      </div>
+  </div>
+    <div class="row">
+        <div class="col-xs-12
+              col-sm-12
+              col-md-12
+              col-lg-12 people-menu">
+              <div class="row human-box-div">
+                  <div class="col-xs-1
+                    col-sm-1
+                    col-md-1
+                    col-lg-1 human-box">
+
+                  </div>
+                  <div class="col-xs-1
+                              col-sm-1
+                              col-md-1
+                              col-lg-1 human-box">
+                  </div>
+                  <div class="col-xs-1
+                                        col-sm-1
+                                        col-md-1
+                                        col-lg-1 human-box">
+                  </div>
+              </div>
+        </div>
+      </div>
+        <!-- <div class="col-xs-12
+              col-sm-12
+              col-md-12
+              col-lg-12 linetime-menu">
+
+        </div>-->
+
+
+
+    <div ng-view></div>
+
+
+    <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="searchModule/searchModule.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-aria.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-leaflet-directive/0.10.0/angular-leaflet-directive.min.js"></script>
+    <script src="app.js"></script>
+    <!-- <script src="persons.js"></script> -->
+    <!-- <script src="view1/view1.js"></script> -->
+    <script src="view2/view2.js"></script>
+    <script src="view3/view3.js"></script>
+    <script src="view4/view4.js"></script>
+    <script src="view5/view5.js"></script>
+    <script src="view6/view6.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+</body>
+
+</html>
